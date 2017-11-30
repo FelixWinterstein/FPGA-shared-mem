@@ -1,4 +1,8 @@
 FPGA-shared-mem
 =============
 
-Paper
+Heterogeneous CPU-FPGA systems are gaining momentum in the embedded systems sector and in the data center market. While the programming abstractions for implementing the data transfer between CPU and FPGA (and _vice versa_) that are available in today's commercial programming tools are well-suited for certain types of applications, the CPU-FPGA communication for applications that share complex pointer-based data structures between the CPU and FPGA remains difficult to implement.
+
+This repository provides the infrastructure and building blocks to enable the programming abstraction of a virtual address space that is shared between the host CPU and one (or potentially several) FPGA devices. One example of _shared virtual memory_ (SVM) is defined by the recent OpenCL 2.0 standard. SVM allows the software and hardware portion of a hybrid application to seamlessly (and concurrently) share complex data structures by simply passing a pointer, which can be dereferenced from both the CPU and the FPGA side and which greatly eases programming heterogeneous systems.
+
+This repository contains a framework that automatically adds the physical infrastructure for SVM into a commercial OpenCL tool for FPGAs (targeting the Intel SDK for OpenCL and an Intel Cyclone V CPU-FPGA heterogeneous system). The companion paper to this repository explores the design space for these building blocks and studies the performance impact. It shows that, due to the ability of SVM-enabled implementations to avoid artificially sizing dynamic data structures and fetching data on-the-fly, up to 2x speed-up over an OpenCL design without SVM support can be achieved.
