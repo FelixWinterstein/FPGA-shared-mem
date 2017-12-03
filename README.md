@@ -25,9 +25,9 @@ The companion paper to this repository explores the design space for these build
 
 2) __Download linux-socfpga sources__: The SVM driver provided in this repository must be compiled against the Linux kernel on the board. Download the Linux kernel from [https://github.com/altera-opensource/linux-socfpga](https://github.com/altera-opensource/linux-socfpga) and save it on your workstation.
 
-3) __Compile the SVM driver__: Set the cross compiler for the SoC platform: `export CROSS_COMPILE=<path-to-SoC-Embedded-Design-Suite-installation>/embedded/ds-5/sw/gcc/bin/arm-linux-gnueabihf-`. Open `svm\_common/svm\_driver/Makefile` and set `KDIR` to the path of the linux-socfpga sources. 
+3) __Compile the SVM driver__: Set the cross compiler for the SoC platform: `export CROSS_COMPILE=<path-to-SoC-Embedded-Design-Suite-installation>/embedded/ds-5/sw/gcc/bin/arm-linux-gnueabihf-`. Open `svm_common/svm_driver/Makefile` and set `KDIR` to the path of the linux-socfpga sources. 
 
-4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Build the library by running the scripts `svm\_common/rtl\_src/generate\_aocl\_interface.sh` and `svm\_common/rtl\_src/package\_ip.sh` (in this order).
+4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Build the library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
 
 
 ### Questions:
