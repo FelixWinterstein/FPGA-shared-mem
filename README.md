@@ -67,4 +67,5 @@ Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/peopl
 
 
 The source code is distributed under an Apache-2.0 license (see LICENSE). If you use it, please cite
+
 Felix Winterstein and George Constantinides: "_Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs_," Proceedings of the International Conference on Field Programmable Technology (ICFPT), 2017.
