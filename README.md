@@ -64,3 +64,7 @@ Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/peopl
 3) Intel Corp, Altera SDK for OpenCL - Cyclone V SoC Getting Started Guide, UG-OCL006, 2016.05.02, [https://www.altera.com/en_US/pdfs/literature/hb/opencl-sdk/aocl_c5soc_getting_started.pdf](https://www.altera.com/en_US/pdfs/literature/hb/opencl-sdk/aocl_c5soc_getting_started.pdf)
 
 4) F. Winterstein, S. Bayliss, and G. Constantinides, "_High-level synthesis of dynamic data structures: a case study using Vivado HLS_," in Proc. ICFPT 2013 [http://cas.ee.ic.ac.uk/people/fw1811/papers/FelixFPT13.pdf](http://cas.ee.ic.ac.uk/people/fw1811/papers/FelixFPT13.pdf) 
+
+
+The source code is distributed under an Apache-2.0 license (see LICENSE). If you use it, please cite
+Felix Winterstein and George Constantinides: "_Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs_," Proceedings of the International Conference on Field Programmable Technology (ICFPT), 2017.
