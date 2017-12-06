@@ -34,7 +34,13 @@ The companion paper to this repository explores the design space for these build
 
 ### Using the framework:
 
-Once the setup is complete, the code examples (`./examples`) provide information on how to use the framework. We provide three examples: _filtering\_algorithm_ (an optimized SVM-enabled implementation of the filtering algorithm for K-means clustering \[4\]), _filtering\_algorithm\_no\_svm_ (an implementation of the filtering algorithm without SVM) and _atomicity\_test_ (a micro-benchmark to test the host-device lock service). The two implementations of the filtering algorithm can be used to reproduce the results presented in the companion paper \[1\].
+Once the setup is complete, the code examples (`./examples`) provide information on how to use the framework. We provide three examples: 
+
+* _filtering\_algorithm_ (an optimized SVM-enabled implementation of the filtering algorithm for K-means clustering \[4\])
+* _filtering\_algorithm\_no\_svm_ (an implementation of the filtering algorithm without SVM)
+* _atomicity\_test_ (a micro-benchmark to test the host-device lock service).
+
+The two implementations of the filtering algorithm can be used to reproduce the results presented in the companion paper \[1\].
 
 Build and run _filtering\_algorithm_:
 
@@ -42,7 +48,7 @@ Build and run _filtering\_algorithm_:
 
 2) __Build the host software__: Include the ARM cross compiler in the $PATH environment: `export PATH=<path-to-SoC-Embedded-Design-Suite-installation>/ds-5/sw/gcc/bin:$PATH`. Run `make`.
 
-3) __Run the example__: Copy the files `bin/filter_stream_opt1.aocx` and `bin/host` to the Cyclone V SoC (e.g. via SSH). Set the OpenCL run-time environment on the SoC and run `host`.
+3) __Run the example__: Copy the files `bin/filter_stream_opt1.aocx` and `bin/host` to the Cyclone V SoC (e.g. via SSH). Set the OpenCL run-time environment on the SoC and run `./host`.
 
 
 ### Questions:
