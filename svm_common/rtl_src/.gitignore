@@ -1,0 +1,6 @@
+*~
+*.log
+msim
+work
+*.wlf
+modelsim.ini

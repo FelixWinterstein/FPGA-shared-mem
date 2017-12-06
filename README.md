@@ -11,6 +11,7 @@ Among the three modes of OpenCL 2.0 SVM, _Coarse-grain buffer SVM_, _Fine-graine
 
 The companion paper to this repository explores the design space for these building blocks and studies the performance impact. It shows that, due to the ability of SVM-enabled implementations to avoid artificially sizing dynamic data structures and fetching data on-the-fly, up to 2x speed-up over an OpenCL design without SVM support can be achieved.
 
+
 ### Prerequisites:
 
 1) The code in this repository has been developed for the Intel Cyclone V SoC Development Kit \[2\], other (including non-SoC such Intel's Xeon+FPGA multi-chip package) platforms are possible, but have not been tested and will likely require minor code modifications.
@@ -18,6 +19,7 @@ The companion paper to this repository explores the design space for these build
 2) The code is compatible to and has been tested with the Intel FPGA SDK for OpenCL version 16.0 (pro not required).
 
 3) The Cyclone V SoC Development Kit runs Linux (the OpenCL SDK for Cyclone V SoC comes with a Linux SD card image). 
+
 
 ### Setup instructions:
 
@@ -27,8 +29,12 @@ The companion paper to this repository explores the design space for these build
 
 3) __Compile the SVM driver__: Set the cross compiler for the SoC platform: `export CROSS_COMPILE=<path-to-SoC-Embedded-Design-Suite-installation>/embedded/ds-5/sw/gcc/bin/arm-linux-gnueabihf-`. Open `svm_common/svm_driver/Makefile` and set `KDIR` to the path of the linux-socfpga sources. 
 
-4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Build the library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
+4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Ensure that `$ALTERAOCLSDKROOT` points to you Intel FPGA OpenCL installation and `source ./init_opencl_env.sh` to point to the correct board support package. Build the custom RTL library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
 
+
+### Setup instructions:
+
+1) 
 
 ### Questions:
 Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/people/fw1811)
