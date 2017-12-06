@@ -42,7 +42,7 @@ Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/peopl
 
 ### References:
 
-1) Felix Winterstein and George Constantinides: "Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs," [http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT2017.pdf](http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT2017.pdf)
+1) Felix Winterstein and George Constantinides: "Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs," [http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT17.pdf](http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT17.pdf)
 
 2) Intel Corp, Cyclone® V SoC Development Kit, [https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-cyclone-v-soc.html](https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-cyclone-v-soc.html)
 
