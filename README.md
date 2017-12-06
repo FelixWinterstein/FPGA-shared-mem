@@ -29,7 +29,7 @@ The companion paper to this repository explores the design space for these build
 
 3) __Compile the SVM driver__: Set the cross compiler for the SoC platform: `export CROSS_COMPILE=<path-to-SoC-Embedded-Design-Suite-installation>/ds-5/sw/gcc/bin/arm-linux-gnueabihf-`. Open `svm_common/svm_driver/Makefile` and set `KDIR` to the path of the linux-socfpga sources. 
 
-4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Ensure that `$ALTERAOCLSDKROOT` points to you Intel FPGA OpenCL installation and `source ./init_opencl_env.sh` to point to the correct board support package. Build the custom RTL library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
+4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Ensure that `$ALTERAOCLSDKROOT` points to your Intel FPGA OpenCL installation and `source ./init_opencl_env.sh` to point to the correct board support package. Build the custom RTL library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
 
 
 ### Using the framework:
