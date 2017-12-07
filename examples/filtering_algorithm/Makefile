@@ -41,12 +41,12 @@ TARGET := host
 TARGET_DIR := bin
 
 # Directories
-INC_DIRS := ../../svm_common/inc ../../svm_common/svm_utils
+INC_DIRS := ../common/inc ../../svm_common/svm_utils
 LIB_DIRS := 
 
 # Files
 INCS := $(wildcard )
-SRCS := $(wildcard host/src/*.cpp host/src/*.hpp ../../svm_common/src/AOCLUtils/*.cpp ../../svm_common/svm_utils/*.cpp)
+SRCS := $(wildcard host/src/*.cpp host/src/*.hpp ../common/src/AOCLUtils/*.cpp ../../svm_common/svm_utils/*.cpp)
 LIBS := rt
 
 # Make it all!
