@@ -7,14 +7,14 @@ This repository provides the infrastructure and building blocks to enable the pr
 
 In order to provide researches a tool for experimenting with OpenCL SVM in the context of FPGAs, this repository contains a framework that automatically adds the physical infrastructure for SVM into a commercial OpenCL tool for FPGAs (targeting the Intel SDK for OpenCL and an Intel Cyclone V CPU-FPGA heterogeneous system). Please refer to the companion paper \[1\] for more information.
 
-Among the three modes of OpenCL 2.0 SVM, _Coarse-grain buffer SVM_, _Fine-grained buffer SVM_ and _Fine-grained system SVM_, this repository provides code for supporting the third mode, which has the highest degree of hardware abstraction, where the entire CPU host address space is shared directly with the FPGA.
+Among the three modes of OpenCL 2.0 SVM, _Coarse-grain buffer SVM_, _Fine-grained buffer SVM_ and _Fine-grained system SVM_, this repository provides code for supporting the third mode, which has the highest degree of hardware abstraction, where the entire CPU host address space is shared directly with the FPGA. While the software/firmware stacks on top of Intel's Xeon+FPGA Multi-Chip Package and IBM's CAPI can support some SVM functionality, this repository gives researchers a low-cost tool to assess the performance impact of _Fine-grained system SVM_.
 
 The companion paper to this repository explores the design space for these building blocks and studies the performance impact. It shows that, due to the ability of SVM-enabled implementations to avoid artificially sizing dynamic data structures and fetching data on-the-fly, up to 2x speed-up over an OpenCL design without SVM support can be achieved.
 
 
 ### Prerequisites:
 
-1) The code in this repository has been developed for the Intel Cyclone V SoC Development Kit \[2\], other (including non-SoC such Intel's Xeon+FPGA multi-chip package) platforms are possible, but have not been tested and will likely require minor code modifications.
+1) The code in this repository has been developed for the Intel Cyclone V SoC Development Kit \[2\]. This platform was chosen because it is a generally available, low-cost platform with hardware support for cache-coherent through-memory communication between CPU and FPGA. Other (including non-SoC such Intel's Xeon+FPGA multi-chip package) platforms are possible, but have not been tested and will likely require minor code modifications (planned for future work).
 
 2) The code is compatible to and has been tested with the Intel FPGA SDK for OpenCL version 16.0.0.211 (pro not required).
 
@@ -36,19 +36,24 @@ The companion paper to this repository explores the design space for these build
 
 Once the setup is complete, the code examples (`./examples`) provide information on how to use the framework. We provide three examples: 
 
-* _filtering\_algorithm_ (an optimized SVM-enabled implementation of the filtering algorithm for K-means clustering \[4\])
-* _filtering\_algorithm\_no\_svm_ (an implementation of the filtering algorithm without SVM)
-* _atomicity\_test_ (a micro-benchmark to test the host-device lock service).
+* __filtering\_algorithm__: an optimized SVM-enabled implementation of the filtering algorithm \[4\] for K-means clustering
+* __filtering\_algorithm\_no\_svm__: an implementation of the filtering algorithm without SVM
+* __atomicity\_test__: a micro-benchmark to test the host-device lock service
 
 The two implementations of the filtering algorithm can be used to reproduce the results presented in the companion paper \[1\].
 
-Build and run _filtering\_algorithm_:
+Build and run __filtering\_algorithm__:
 
 1) __Build the hardware__: Change into `./examples/filtering_algorithm`. Ensure you have completed all setup steps from the previous section. Build the FPGA design by running the scripts `./generate_system_files.sh` and `./generate_hardware.sh` (in this order). The first script generates the RTL and QSYS design files, calls the SVM scripts in `../../svm_common/scripts` and the custom RTL library in `../../svm_common/rtl_src` and then stops the build flow. The second script continues the build flow with the manipulated RTL and QSYS sources.
 
 2) __Build the host software__: Include the ARM cross compiler in the $PATH environment: `export PATH=<path-to-SoC-Embedded-Design-Suite-installation>/ds-5/sw/gcc/bin:$PATH`. Run `make`.
 
 3) __Run the example__: Copy the files `bin/filter_stream_opt1.aocx` and `bin/host` to the Cyclone V SoC (e.g. via SSH). Set the OpenCL run-time environment on the SoC and run `./host`.
+
+
+
+### Future work:
+We are planning to integrate this framework with the software/firmware stacks on top of Intel's Xeon+FPGA Multi-Chip Package and IBM's CAPI.
 
 
 ### Questions:
