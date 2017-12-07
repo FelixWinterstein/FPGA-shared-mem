@@ -12,7 +12,7 @@ Among the three modes of OpenCL 2.0 SVM, _Coarse-grain buffer SVM_, _Fine-graine
 The companion paper to this repository explores the design space for these building blocks and studies the performance impact. It shows that, due to the ability of SVM-enabled implementations to avoid artificially sizing dynamic data structures and fetching data on-the-fly, up to 2x speed-up over an OpenCL design without SVM support can be achieved.
 
 
-### Prerequisites:
+## Prerequisites:
 
 1) The code in this repository has been developed for the Intel Cyclone V SoC Development Kit \[2\]. This platform was chosen because it is a generally available, low-cost platform with hardware support for cache-coherent through-memory communication between CPU and FPGA. Other (including non-SoC such Intel's Xeon+FPGA multi-chip package) platforms are possible, but have not been tested and will likely require minor code modifications (planned for future work).
 
@@ -21,7 +21,7 @@ The companion paper to this repository explores the design space for these build
 3) The Cyclone V SoC Development Kit runs Linux (the OpenCL SDK for Cyclone V SoC comes with a Linux SD card image). 
 
 
-### Setup instructions:
+## Setup instructions:
 
 1) __Set up Cyclone V Development Kit__: Set up the OpenCL run-time environment on the Cyclone V SoC as described in \[3\]. After completion, the SoC runs Linux. The Intel FPGA SDK for OpenCL and the SoC Embedded Design Suite (required for cross-compiling the OpenCL host code for the SoC) have been installed on your workstation.
 
@@ -32,7 +32,7 @@ The companion paper to this repository explores the design space for these build
 4) __Build the custom RTL library for SVM__: The SVM functionality at the hardware end is implemented in a custom RTL library, which is integrated into the OpenCL compilation flow. Ensure that `$ALTERAOCLSDKROOT` points to your Intel FPGA OpenCL installation and `source ./init_opencl_env.sh` to point to the correct board support package. Build the custom RTL library by running the scripts `svm_common/rtl_src/generate_aocl_interface.sh` and `svm_common/rtl_src/package_ip.sh` (in this order).
 
 
-### Using the framework:
+## Using the framework:
 
 Once the setup is complete, the code examples (`./examples`) provide information on how to use the framework. We provide three examples: 
 
@@ -52,15 +52,15 @@ Build and run __filtering\_algorithm__:
 
 
 
-### Future work:
+## Future work:
 We are planning to integrate this framework with the software/firmware stacks on top of Intel's Xeon+FPGA Multi-Chip Package and IBM's CAPI.
 
 
-### Questions:
+## Questions:
 Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/people/fw1811)
 
 
-### References:
+## References:
 
 1) Felix Winterstein and George Constantinides: "_Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs_," in Proc. ICFPT 2017 [http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT17.pdf](http://cas.ee.ic.ac.uk/people/fw1811/papers/Felix_ICFPT17.pdf)
 
@@ -71,7 +71,7 @@ Write to me: [http://cas.ee.ic.ac.uk/people/fw1811](http://cas.ee.ic.ac.uk/peopl
 4) F. Winterstein, S. Bayliss, and G. Constantinides, "_High-level synthesis of dynamic data structures: a case study using Vivado HLS_," in Proc. ICFPT 2013 [http://cas.ee.ic.ac.uk/people/fw1811/papers/FelixFPT13.pdf](http://cas.ee.ic.ac.uk/people/fw1811/papers/FelixFPT13.pdf) 
 
 
+## Please cite:
 
 The source code is distributed under an Apache-2.0 license (see LICENSE). If you use it, please cite
-
-Felix Winterstein and George Constantinides: "_Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs_," Proceedings of the International Conference on Field Programmable Technology (ICFPT), 2017.
+_Felix Winterstein and George Constantinides: "Pass a Pointer: Exploring Shared Virtual Memory Abstractions in OpenCL Tools for FPGAs," Proceedings of the International Conference on Field Programmable Technology (ICFPT), 2017_.
